@@ -5,19 +5,12 @@ import java.io.*;
 public class AppRunner {
     private String readFile(String testDataFile) {
         StringBuilder receipt = new StringBuilder();
-        try {
-//            InputStreamReader isr = new InputStreamReader(new FileInputStream("./src/main/resources/"+testDataFile), "UTF-8");
-//            BufferedReader br = new BufferedReader(isr);
-            BufferedReader br = new BufferedReader(new FileReader("./src/main/resources/"+testDataFile));
+        try { BufferedReader br = new BufferedReader(new FileReader("./src/main/resources/"+testDataFile));
             String line;
-            while ((line = br.readLine())!=null){
-                ReadPara readPara = new ReadPara(line);
+            while ((line = br.readLine())!=null){ ReadPara readPara = new ReadPara(line);
                 Taxi taxi = new Taxi(readPara.getDistance(),readPara.getWaitTime());
-                receipt.append(taxi.getReceipt()).append("\n");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+                receipt.append(taxi.getReceipt()).append("\n"); }
+        } catch (Exception e) {e.printStackTrace(); }
         return receipt.toString();
     }
 
