@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 
 public class TaxiTest {
     @Test
-    public void testDistanceLessThan_2(){
+    public void testDistanceLessThan2(){
         Taxi taxi = new Taxi(1,0);
         assertEquals(6,taxi.getPrice());
     }
