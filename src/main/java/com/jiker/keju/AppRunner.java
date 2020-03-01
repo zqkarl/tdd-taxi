@@ -4,21 +4,21 @@ import java.io.*;
 
 public class AppRunner {
     private String readFile(String testDataFile) {
-        String receipt = "";
+        StringBuilder receipt = new StringBuilder();
         try {
-            System.out.println(System.getProperty("user.dir"));
-            InputStreamReader isr = new InputStreamReader(new FileInputStream("./src/main/resources/"+testDataFile), "UTF-8");
-            BufferedReader br = new BufferedReader(isr);
+//            InputStreamReader isr = new InputStreamReader(new FileInputStream("./src/main/resources/"+testDataFile), "UTF-8");
+//            BufferedReader br = new BufferedReader(isr);
+            BufferedReader br = new BufferedReader(new FileReader("./src/main/resources/"+testDataFile));
             String line;
             while ((line = br.readLine())!=null){
                 ReadPara readPara = new ReadPara(line);
                 Taxi taxi = new Taxi(readPara.getDistance(),readPara.getWaitTime());
-                receipt += taxi.getReceipt() + "\n";
+                receipt.append(taxi.getReceipt()).append("\n");
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return receipt;
+        return receipt.toString();
     }
 
     public static void main(String[] args) {
