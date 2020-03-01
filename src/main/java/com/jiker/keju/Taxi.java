@@ -5,7 +5,6 @@ public class Taxi {
     private final int wait;
 
     public Taxi(int distance, int wait) {
-
         this.distance = distance;
         this.wait = wait;
     }
