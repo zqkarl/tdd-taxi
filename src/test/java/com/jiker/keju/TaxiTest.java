@@ -6,27 +6,27 @@ import static org.junit.Assert.assertEquals;
 
 public class TaxiTest {
     @Test
-    public void test_distance_less_than_2(){
+    public void testDistanceLessThan_2(){
         Taxi taxi = new Taxi(1,0);
         assertEquals(6,taxi.getPrice());
     }
     @Test
-    public void test_distance_between_2_and_8(){
+    public void testDistanceBetween2And8(){
         Taxi taxi = new Taxi(3,0);
         assertEquals(7,taxi.getPrice());
     }
     @Test
-    public void test_distance_over_8(){
+    public void testDistanceOver8(){
         Taxi taxi = new Taxi(10,0);
         assertEquals(13,taxi.getPrice());
     }
     @Test
-    public void test_wait(){
+    public void testWait(){
         Taxi taxi = new Taxi(2,3);
         assertEquals(7,taxi.getPrice());
     }
     @Test
-    public void test_getReceipt(){
+    public void testGetReceipt(){
         Taxi taxi = new Taxi(2,3);
         assertEquals("收费7元",taxi.getReceipt());
     }
