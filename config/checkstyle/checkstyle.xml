@@ -36,21 +36,7 @@
 
     <!-- Checks for whitespace                               -->
     <!-- See http://checkstyle.org/config_whitespace.html -->
-    <module name="FileTabCharacter">
-        <property name="eachLine" value="true"/>
-    </module>
 
-    <module name="FileLength" >
-        <property name="max" value="50"/>
-        <property name="severity" value="error" />
-    </module>
-
-    <module name="LineLength">
-        <property name="fileExtensions" value="java"/>
-        <property name="max" value="150"/>
-        <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://"/>
-        <property name="severity" value="error"/>
-    </module>
 
     <module name="TreeWalker">
         <module name="OuterTypeFilename"/>
